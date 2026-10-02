@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rishi Shukla — Technical Product Manager</title>
+<meta name="description" content="Rishi Shukla — Senior Product Manager building at the intersection of logistics automation, robotics, and backend supply chain systems.">
+<style>
+  :root {
+    --bg: #0b0d12;
+    --bg-alt: #12151c;
+    --card: #161a23;
+    --border: #232836;
+    --text: #e7e9ee;
+    --text-dim: #9aa1b2;
+    --accent: #5eead4;
+    --accent-2: #818cf8;
+    --radius: 14px;
+    --maxw: 980px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Nav */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(10px);
+    background: rgba(11, 13, 18, 0.85);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-name {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero {
+    padding: 96px 0 72px;
+    border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(600px 300px at 15% -10%, rgba(94,234,212,0.10), transparent),
+      radial-gradient(600px 300px at 90% 0%, rgba(129,140,248,0.10), transparent);
+  }
+  .hero-top {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 28px;
+  }
+  .avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 2px solid var(--border);
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .eyebrow {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+  }
+  h1 {
+    font-size: 40px;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+  }
+  .role-line {
+    color: var(--text-dim);
+    font-size: 17px;
+    margin: 0;
+  }
+  .hero-copy {
+    font-size: 18px;
+    color: var(--text);
+    max-width: 640px;
+    margin: 0 0 28px;
+  }
+  .hero-copy strong { color: var(--accent); font-weight: 600; }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #05221d;
+    border-color: var(--accent);
+  }
+  .btn-primary:hover { transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+  }
+  .btn-ghost:hover { border-color: var(--accent-2); transform: translateY(-1px); }
+
+  /* Sections */
+  section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  .section-head { margin-bottom: 36px; }
+  .section-eyebrow {
+    color: var(--accent-2);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+  }
+  h2 { font-size: 28px; margin: 0; letter-spacing: -0.01em; }
+  .section-sub { color: var(--text-dim); margin: 10px 0 0; max-width: 620px; }
+
+  /* Projects */
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  .project-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .project-title { font-size: 20px; font-weight: 700; margin: 0; }
+
+  .project-media {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 18px;
+    background: var(--bg-alt);
+  }
+  .project-media img { display: block; width: 100%; height: auto; }
+  .media-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); }
+  .media-strip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .project-desc { color: var(--text-dim); margin: 0 0 16px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .tag {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  .project-links { display: flex; gap: 16px; flex-wrap: wrap; }
+  .project-links a {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--accent);
+  }
+  .project-links a:hover { text-decoration: underline; }
+  .project-links .disabled {
+    color: var(--text-dim);
+    font-weight: 500;
+    cursor: default;
+  }
+
+  .highlight-list {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-dim);
+  }
+  .highlight-list li { margin-bottom: 6px; }
+  .highlight-list strong { color: var(--text); }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .skill-group {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+  }
+  .skill-group h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-2);
+    margin: 0 0 12px;
+  }
+  .skill-group ul { margin: 0; padding: 0; list-style: none; }
+  .skill-group li {
+    font-size: 14.5px;
+    color: var(--text);
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .skill-group li:last-child { border-bottom: none; }
+
+  /* Experience */
+  .timeline { position: relative; }
+  .role {
+    position: relative;
+    padding-left: 28px;
+    padding-bottom: 34px;
+    border-left: 2px solid var(--border);
+    margin-left: 6px;
+  }
+  .role:last-child { padding-bottom: 0; }
+  .role::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .role-title { font-size: 17px; font-weight: 700; margin: 0; }
+  .role-meta {
+    color: var(--text-dim);
+    font-size: 13.5px;
+    margin: 2px 0 12px;
+  }
+  .role ul { margin: 0; padding-left: 18px; color: var(--text-dim); }
+  .role li { margin-bottom: 6px; font-size: 14.5px; }
+  .role li strong { color: var(--text); }
+
+  /* Contact */
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+    text-align: center;
+  }
+  .contact-card p { color: var(--text-dim); max-width: 480px; margin: 10px auto 24px; }
+  .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+  footer {
+    padding: 32px 0 48px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { gap: 14px; }
+    h1 { font-size: 32px; }
+    .hero { padding: 72px 0 56px; }
+    section { padding: 56px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Rishi Shukla</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="avatar"><img src="images/profile.jpg" alt="Rishi Shukla"></div>
+      <div>
+        <p class="eyebrow">Technical / AI Product Manager</p>
+        <h1>Rishi Shukla</h1>
+        <p class="role-line">Sr. Product Manager @ Amazon · Washington DC–Baltimore Area</p>
+      </div>
+    </div>
+    <p class="hero-copy">
+      Passionate builder with a deep eye for <strong>logistics automation</strong>,
+      <strong>robotics</strong>, and <strong>backend supply chain</strong> systems —
+      a builder and dreamer who's never satisfied with the status quo. Eight-plus years
+      turning ambiguous problems into shipped products, from freight marketplaces at
+      Amazon-scale to autonomous drone delivery. Now building hands-on with code to
+      bridge the gap between product strategy and technical execution.
+    </p>
+    <div class="hero-links">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/shaileshrishi" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/rishi-729" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Shipped Work</p>
+      <h2>Projects</h2>
+      <p class="section-sub">Personal builds and product work I've led — spanning ride-sharing
+      logistics, consumer hardware, IoT tracking, and AI infrastructure.</p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <h3 class="project-title">RideTogether</h3>
+      </div>
+      <p class="project-desc">
+        A ride-sharing MVP that matches commuters by <strong>route overlap and departure-time
+        alignment</strong> — not just shared destination — so carpooling adds as little detour
+        time as possible. Built and deployed solo, end to end: auth, matching algorithm,
+        live mapping, and a production database.
+      </p>
+      <div class="tag-row">
+        <span class="tag">Node.js / Express</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Prisma</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Leaflet Maps</span>
+        <span class="tag">AES-256-GCM Encryption</span>
+      </div>
+      <ul class="highlight-list">
+        <li><strong>Matching algorithm:</strong> 70% route-overlap score + 30% departure-time
+          alignment, returning a ranked match % and "+N min detour" per rider.</li>
+        <li><strong>End-to-end flow:</strong> phone OTP login, encrypted signup, trip accept/skip,
+          50/50 fare split, ratings and trust scores.</li>
+        <li><strong>Live geolocation:</strong> interactive Leaflet map with real-time browser
+          positioning.</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://ridetogether-api.onrender.com/" target="_blank" rel="noopener">Live app →</a>
+        <span class="disabled">Source private — available on request</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <h3 class="project-title">Intelligent Dog House</h3>
+      </div>
+      <div class="project-media">
+        <svg viewBox="0 0 800 320" width="100%" role="img" aria-label="Illustration of a climate-controlled smart dog house with temperature sensing">
+          <defs>
+            <linearGradient id="dhBg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#161a23"/>
+              <stop offset="100%" stop-color="#12151c"/>
+            </linearGradient>
+            <linearGradient id="dhRoof" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#818cf8"/>
+              <stop offset="100%" stop-color="#5eead4"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="320" fill="url(#dhBg)"/>
+          <circle cx="120" cy="70" r="130" fill="#5eead4" opacity="0.06"/>
+          <circle cx="700" cy="260" r="150" fill="#818cf8" opacity="0.07"/>
+
+          <!-- sun icon (heat side) -->
+          <g transform="translate(150,90)" stroke="#fb923c" stroke-width="4" stroke-linecap="round" opacity="0.85">
+            <circle cx="0" cy="0" r="16" fill="none"/>
+            <line x1="0" y1="-30" x2="0" y2="-24"/>
+            <line x1="0" y1="24" x2="0" y2="30"/>
+            <line x1="-30" y1="0" x2="-24" y2="0"/>
+            <line x1="24" y1="0" x2="30" y2="0"/>
+            <line x1="-21" y1="-21" x2="-17" y2="-17"/>
+            <line x1="17" y1="17" x2="21" y2="21"/>
+            <line x1="-21" y1="21" x2="-17" y2="17"/>
+            <line x1="17" y1="-17" x2="21" y2="-21"/>
+          </g>
+
+          <!-- snowflake icon (cold side) -->
+          <g transform="translate(650,90)" stroke="#5eead4" stroke-width="4" stroke-linecap="round" opacity="0.85">
+            <line x1="0" y1="-22" x2="0" y2="22"/>
+            <line x1="-19" y1="-11" x2="19" y2="11"/>
+            <line x1="-19" y1="11" x2="19" y2="-11"/>
+          </g>
+
+          <!-- doghouse -->
+          <g transform="translate(400,215)">
+            <polygon points="-140,20 0,-95 140,20" fill="url(#dhRoof)"/>
+            <rect x="-115" y="18" width="230" height="105" rx="6" fill="#1c212c" stroke="#232836" stroke-width="2"/>
+            <path d="M -38 123 L -38 55 Q -38 25 0 25 Q 38 25 38 55 L 38 123 Z" fill="#0b0d12"/>
+            <circle cx="0" cy="-20" r="7" fill="#0b0d12" opacity="0.5"/>
+          </g>
+
+          <!-- thermometer badge -->
+          <g transform="translate(400,150)">
+            <rect x="-13" y="-34" width="26" height="58" rx="13" fill="#0b0d12" stroke="#fb923c" stroke-width="3"/>
+            <circle cx="0" cy="20" r="11" fill="#fb923c"/>
+            <rect x="-4" y="-24" width="8" height="38" rx="4" fill="#fb923c"/>
+          </g>
+
+          <text x="400" y="290" text-anchor="middle" fill="#9aa1b2" font-family="-apple-system,Segoe UI,sans-serif" font-size="15" letter-spacing="0.03em">Adaptive climate control hardware</text>
+        </svg>
+      </div>
+      <p class="project-desc">
+        A climate-controlled house for your fur buddy — so you can be carefree about heat
+        exhaustion risk. Summer can be tough, and not all dogs are built the same: your husky
+        might love the winters but wear out fast once the heat sets in. Shipped to real
+        households, sensing temperature and humidity in real time and automatically
+        regulating the interior climate, so owners don't have to babysit the weather.
+      </p>
+      <div class="tag-row">
+        <span class="tag">Climate Sensing</span>
+        <span class="tag">Automated Control</span>
+        <span class="tag">Consumer Hardware</span>
+        <span class="tag">Lean / Design Thinking</span>
+      </div>
+      <ul class="highlight-list">
+        <li>Designed around <strong>breed-specific heat tolerance</strong> — the same fixed
+          temperature target doesn't work for a husky and a short-haired breed.</li>
+        <li>Taken from early design through a working build and out to real households,
+          applying lean development and rapid MVP validation.</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <h3 class="project-title">BLE Beacon Asset-Tracking System</h3>
+      </div>
+      <p class="project-desc">
+        Designed a low-power Bluetooth Low Energy beacon system for real-time asset tracking —
+        spanning custom PCB hardware, coin-cell power management, firmware, and the backend
+        tracking software that ingested and visualized beacon signals at scale.
+        <em>This project is patented and proprietary to Amazon, so implementation details
+        are intentionally left generic.</em>
+      </p>
+      <div class="tag-row">
+        <span class="tag">BLE / IoT</span>
+        <span class="tag">Custom PCB</span>
+        <span class="tag">Embedded Firmware</span>
+        <span class="tag">Low-Power Hardware</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <h3 class="project-title">Intelligent LLM Router</h3>
+      </div>
+      <p class="project-desc">
+        A token-optimizing router that sits in front of any LLM workload and sends each prompt
+        to the <strong>cheapest model capable of handling it</strong> — scoring difficulty
+        before routing, and layering in semantic caching so repeated or near-duplicate prompts
+        never hit a paid model twice. The goal: cut token spend without cutting output quality.
+      </p>
+      <div class="tag-row">
+        <span class="tag">LLM Routing</span>
+        <span class="tag">Semantic Caching</span>
+        <span class="tag">Cost Optimization</span>
+        <span class="tag">Model Evaluation</span>
+      </div>
+      <ul class="highlight-list">
+        <li><strong>Difficulty-based routing:</strong> classify prompt complexity, then send
+          simple requests to cheap/fast models and reserve expensive models for what actually
+          needs them.</li>
+        <li><strong>Semantic cache:</strong> catch near-duplicate prompts before they trigger a
+          new (billable) model call.</li>
+        <li>Designed to pair with the self-hosted Raspberry Pi tier below as a free "cheapest
+          possible" routing target.</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <h3 class="project-title">Raspberry Pi Self-Hosted LLM</h3>
+      </div>
+      <p class="project-desc">
+        Running a local, open-source LLM on a Raspberry Pi to serve as the free "cheap tier"
+        for the router above — handling the simplest, lowest-stakes prompts entirely
+        on-device with zero API cost, before anything more complex gets escalated to a
+        larger hosted model.
+      </p>
+      <div class="tag-row">
+        <span class="tag">Raspberry Pi</span>
+        <span class="tag">Self-Hosted LLM</span>
+        <span class="tag">Edge Inference</span>
+        <span class="tag">Open Source</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Toolkit</p>
+      <h2>Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Product & Program</h3>
+        <ul>
+          <li>Product Strategy & Roadmapping</li>
+          <li>Program Management</li>
+          <li>0→1 Product Development</li>
+          <li>Technology Commercialization</li>
+          <li>Voice of Customer / User Research</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Technical Build</h3>
+        <ul>
+          <li>Node.js, Express, TypeScript</li>
+          <li>Prisma ORM, PostgreSQL</li>
+          <li>REST API design</li>
+          <li>Git / GitHub workflows</li>
+          <li>BLE / embedded & IoT systems</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Domain</h3>
+        <ul>
+          <li>Logistics & supply chain automation</li>
+          <li>Last-mile / middle-mile delivery</li>
+          <li>Robotics & unmanned systems (UAV)</li>
+          <li>Freight marketplaces & routing</li>
+          <li>E-commerce operations</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Certifications</h3>
+        <ul>
+          <li>Lean Six Sigma Green Belt (ICGB)</li>
+          <li>MS, The Johns Hopkins University — Carey Business School</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Career</p>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="role">
+        <h3 class="role-title">Sr. Product Manager — Amazon</h3>
+        <p class="role-meta">Sep 2020 – Present · Washington, United States</p>
+        <ul>
+          <li>Owned product vision and full lifecycle for <strong>TORCH</strong>, a routing
+            configuration automation tool adopted across North America and Europe — cutting
+            manual configuration time by <strong>98%</strong>.</li>
+          <li>Led integration of PillPack into Amazon's core supply chain system
+            (<strong>ATROPS</strong>), paving the way for Amazon Pharmacy — reducing
+            cost-to-serve by <strong>60%</strong> and enabling <strong>30% YoY</strong> volume growth.</li>
+          <li>Managed a team of 3 PMs driving last-mile/middle-mile strategy for Amazon Canada;
+            launched a cross-border logistics solution that cut CAPEX by <strong>$100M</strong>
+            over four years.</li>
+          <li>Built <strong>Relay</strong>, a freight auction marketplace for 3PLs to bid on
+            Amazon shipments, improving middle-mile efficiency during Prime and Peak seasons.</li>
+          <li>Shipped <strong>LanePro</strong>, a route-optimization tool replacing manual Excel
+            planning — <strong>$30M</strong> in annualized savings and 40% faster
+            click-to-delivery.</li>
+          <li>Ran 100+ Voice-of-Customer interviews, shipping an accessibility-driven delivery
+            feature for customers with mobility challenges.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <h3 class="role-title">Sr. Product Manager, Growth — Missiongo Unmanned Aerial Systems</h3>
+        <p class="role-meta">Mar 2020 – Sep 2020</p>
+        <ul>
+          <li>Pioneered drone-based organ transport, validating product-market fit through
+            hospital partnerships and field pilots.</li>
+          <li>Built a real-time monitoring interface with engineering so physicians could
+            track live location plus temperature, humidity, and vibration during flight.</li>
+          <li>Led commercialization across healthcare, medical logistics, utility inspection,
+            and inter-harbor transport.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <h3 class="role-title">Product Manager — Exelon</h3>
+        <p class="role-meta">Mar 2019 – Aug 2019 · Washington DC–Baltimore Area</p>
+        <ul>
+          <li>Led product innovation across energy efficiency and infrastructure lines,
+            shipping market-validated MVPs via lean development and design thinking.</li>
+          <li>Defined requirements for automated utility pole inspection — improving field
+            efficiency and defect detection by 15%.</li>
+          <li>Developed dynamic pricing strategy for EV charging networks to optimize load
+            distribution and grid resilience.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <h3 class="role-title">Technology Expert — The Center for Advancing Innovation</h3>
+        <p class="role-meta">Jan 2019 – Aug 2019 · Washington DC–Baltimore Area</p>
+        <ul>
+          <li>Partnered with the Walton Family Foundation (Walmart) to identify transformational
+            supply-chain and logistics opportunities.</li>
+          <li>Analyzed 600+ patents in last-mile delivery and logistics, building a
+            commercialization plan to spin out inventions into products.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <h3 class="role-title">Product Operations Manager — Teekay</h3>
+        <p class="role-meta">Dec 2012 – Aug 2018 · Singapore</p>
+        <ul>
+          <li>Led a multinational team of 30 managing $25M in assets.</li>
+          <li>Spearheaded ERP integration across the fleet, cutting annual procurement costs
+            by $3M.</li>
+          <li>Built a predictive-maintenance model from historical repair data, saving $0.8M
+            annually in spare-parts inventory.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <p class="section-eyebrow" style="text-align:center;">Let's talk</p>
+      <h2>Building something in AI, logistics, or robotics?</h2>
+      <p>Open to conversations about technical product roles, collaborations, or just
+        talking shop about supply chain systems and autonomy.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/shaileshrishi" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/rishi-729" target="_blank" rel="noopener">See GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Rishi Shukla. Built with code, not a template.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
